@@ -1,0 +1,63 @@
+﻿@page "/User/Registrar"
+@model RegisterModel
+@{
+    var image = "/images/images/default.png";
+}
+<h1>Zona de Registro</h1>
+<div class="container p-4">
+    <form method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <output id="imageUser">
+                            <img src=@image class="imageUser" />
+                        </output>
+                    </div>
+                    <div class="card-body">
+                        <div class="caption text-center">
+                            <label class="btn btn-primary" for="files">Upload pic</label>
+                            <input asp-for="Input.AvatarImage" accept="image/*" type="file" id="files" />
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-md-5">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Register users</h3>
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card border">
+                                <div class="card-header" id="headingOne">
+                                    <div id="header" class="bg-info rounded">
+                                        
+                                            <button class="btn btn-info w-100 text-light register-button text-center rounded" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Submit info
+                                            </button>
+
+
+                                    </div>
+                                </div>
+                                <div id="collapseOne" class="collapse show " aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <input asp-for="Input.NID" placeholder="NID" class="form-control" autofocus/>
+                                            <span asp-validation-for="Input.NID" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
